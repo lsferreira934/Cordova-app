@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="out">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/platforms/android/app/build/intermediates/project_dex_archive/debug/out/9c8c4b05c1bb4589180bb3b4ad78c9e1fd10fd576a201013b39aa9d828f416cd_2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/app/build/intermediates/project_dex_archive/debug/out/9c8c4b05c1bb4589180bb3b4ad78c9e1fd10fd576a201013b39aa9d828f416cd_3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/app/build/intermediates/project_dex_archive/debug/out/9c8c4b05c1bb4589180bb3b4ad78c9e1fd10fd576a201013b39aa9d828f416cd_1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/app/build/intermediates/project_dex_archive/debug/out/9c8c4b05c1bb4589180bb3b4ad78c9e1fd10fd576a201013b39aa9d828f416cd_0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/app/build/intermediates/project_dex_archive/debug/out/9c8c4b05c1bb4589180bb3b4ad78c9e1fd10fd576a201013b39aa9d828f416cd_5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/app/build/intermediates/project_dex_archive/debug/out/9c8c4b05c1bb4589180bb3b4ad78c9e1fd10fd576a201013b39aa9d828f416cd_4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

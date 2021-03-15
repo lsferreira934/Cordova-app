@@ -1,0 +1,133 @@
+<div id="mySidenav" class="sidenav">
+  <a id="btCloseNav" class="closebtn">&times;</a>
+  <a>
+    <img src="https://dentalspeed.com/imgs/topo/icones/user.svg" alt="log" style="width: 65px;" data-bs-toggle="modal"
+      data-bs-target="#exampleModal">
+  </a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Perfil do Usuário</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row d-flex">
+          <div class=" d-flex justify-content-center col-12 col-sm-12 col-md-12">
+            <img id="imgPerfilUser" src="https://dentalspeed.com/imgs/topo/icones/user.svg" alt="log" style="  width: 220px;
+            height: 220px;">
+          </div>
+          <div class="d-flex justify-content-center align-self-center col-12 col-sm-12 col-md-12">
+            <div style="margin-bottom: 20px; margin-right:10px">
+              <button id="getPicture" type="button" class="btn btn-secondary">Tirar foto</button>
+            </div>
+            <div>
+              <button id="getPictureAlbum" type="button" class="btn btn-secondary">Galeria</button>
+            </div>
+          </div>
+        </div>
+        <form class="row g-3">
+          <div class="col-md-12">
+            <label for="inputNome" class="form-label">Nome</label>
+            <input type="email" class="form-control" id="inputNome">
+          </div>
+          <div class="col-md-12">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail">
+          </div>
+          <div class="col-md-12">
+            <label for="inputPassword" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="inputPassword">
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Rua / Avenida ...">
+          </div>
+          <div class="col-12">
+            <label for=inputNeighborhood class="form-label">Bairro</label>
+            <input type="text" class="form-control" id="inputNeighborhood" placeholder="Bairro">
+          </div>
+          <div class="col-md-12">
+            <label for="inputCity" class="form-label">Cidade</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="col-md-12">
+            <label for="inputState" class="form-label">Estado</label>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <label for="inputZip" class="form-label">CEP</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Salva Alterações</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#getPicture').on('click', camApp)
+
+  function camApp() {
+    navigator.camera.getPicture(onSuccess, onFail, {
+      quality: 50,
+      destinationType: Camera.DestinationType.FILE_URI,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      mediaType: Camera.MediaType.PICTURE,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidht: 220,
+      targetHeight: 220,
+      correctOrientation: true
+    });
+  }
+
+  function onSuccess(imgURI) {
+    $('#imgPerfilUser').attr('src', imgURI)
+
+  }
+
+  function onFail(error) {
+    alert('Erro ao capiturar a imagem:' + ' ' + error)
+  }
+
+  $('#getPictureAlbum').on('click', albumApp)
+
+  function albumApp() {
+    navigator.camera.getPicture((imgURI) => {
+      $('#imgPerfilUser').attr('src', imgURI)
+
+    }, (error) => {
+      alert('Erro ao capiturar a imagem:' + ' ' + error)
+    }, {
+      quality: 50,
+      destinationType: Camera.DestinationType.FILE_URI,
+      sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+      encodingType: Camera.EncodingType.JPEG,
+      mediaType: Camera.MediaType.PICTURE,
+      allowEdit: true,
+      correctOrientation: true
+    })
+  }
+
+
+
+  $('#btCloseNav').off().click(() => {
+    $('#mySidenav').css('width', '0px')
+  })
+
+
+</script>
